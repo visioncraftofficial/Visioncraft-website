@@ -1,105 +1,241 @@
-const visionCraftData = {
-  brand: {
-    name: "VISION CRAFT",
-    slogan: "See It. Believe It. Create It.",
-    logo: "images/IMG-20260504-WA0022.jpg",
-    email: "visioncraftllp10@gmail.com",
-    phone: "317 827 3128",
-    location: "Indiana, USA"
-  },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision Craft</title>
 
-  hero: {
-    title: "See It. Believe It. Create It.",
-    subtitle:
-      "Vision Craft is a creative, faith-centered, and community-focused movement built to inspire, connect, and impact the next generation.",
-    buttonText: "Discover Vision Craft",
-    buttonLink: "#about"
-  },
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+    body{background:#0b1120;color:white;line-height:1.6;}
+    header{background:#111827;padding:15px 35px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+    .logo{display:flex;align-items:center;gap:15px;}
+    .logo img{width:70px;height:70px;object-fit:cover;border-radius:15px;border:2px solid #facc15;}
+    .logo h1{color:#facc15;font-size:26px;}
+    nav a{color:white;text-decoration:none;margin-left:18px;font-weight:bold;}
+    nav a:hover{color:#facc15;}
 
-  about: {
-    title: "About Vision Craft",
-    text:
-      "Vision Craft is more than an organization. It is a movement focused on youth, faith, creativity, media, leadership, events, and community impact. We create meaningful experiences that bring people together and inspire the next generation to believe in their vision."
-  },
+    .hero{min-height:85vh;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),linear-gradient(135deg,#f59e0b,#ea580c,#111827);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;}
+    .hero h2{font-size:58px;margin-bottom:20px;text-transform:uppercase;}
+    .hero p{max-width:850px;margin:auto;font-size:21px;color:#f8fafc;}
+    .btn{display:inline-block;margin-top:28px;padding:14px 30px;background:#facc15;color:black;border-radius:30px;text-decoration:none;font-weight:bold;}
 
-  mission: {
-    title: "Our Mission",
-    text:
-      "To inspire young people and communities through creative events, faith-based experiences, leadership, media, and powerful moments of connection."
-  },
+    section{padding:80px 20px;}
+    .container{max-width:1150px;margin:auto;}
+    h3{font-size:40px;color:#facc15;text-align:center;margin-bottom:20px;}
+    .center{text-align:center;max-width:900px;margin:auto;color:#d1d5db;font-size:18px;}
 
-  vision: {
-    title: "Our Vision",
-    text:
-      "To become a platform where young people can discover their gifts, grow their confidence, and create positive impact in their community."
-  },
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px;}
+    .card{background:#111827;border:1px solid #334155;border-radius:20px;padding:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.35);}
+    .card h4{color:#facc15;font-size:23px;margin-bottom:12px;}
 
-  values: [
-    "Faith",
-    "Creativity",
-    "Leadership",
-    "Unity",
-    "Youth Empowerment",
-    "Community Impact"
-  ],
+    .dark{background:#111827;}
+    .orange{background:linear-gradient(135deg,#f59e0b,#ea580c);color:white;}
+    .orange h3{color:white;}
 
-  teams: [
-    {
-      title: "Leadership Team",
-      description: "Guiding the vision, planning, and direction of Vision Craft."
-    },
-    {
-      title: "Media Team",
-      description: "Creating photos, videos, graphics, and digital content."
-    },
-    {
-      title: "Promotion Team",
-      description: "Spreading the vision and connecting with the community."
-    },
-    {
-      title: "Event Team",
-      description: "Organizing concerts, worship nights, youth events, and special experiences."
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:35px;}
+    .gallery img{width:100%;height:280px;object-fit:cover;border-radius:20px;border:2px solid #1e293b;}
+
+    .contact{text-align:center;background:#111827;}
+    .contact p{font-size:18px;margin:8px 0;}
+
+    footer{background:black;color:#aaa;text-align:center;padding:25px;}
+
+    @media(max-width:750px){
+      header{flex-direction:column;gap:12px;}
+      nav a{margin:0 8px;font-size:14px;}
+      .hero h2{font-size:38px;}
+      .logo h1{font-size:22px;}
     }
-  ],
+  </style>
+</head>
 
-  services: [
-    {
-      title: "Events",
-      description: "Concerts, worship experiences, youth gatherings, and community programs."
-    },
-    {
-      title: "Media",
-      description: "Photography, video, graphics, and promotional content."
-    },
-    {
-      title: "Youth Connection",
-      description: "Creating spaces where young people can connect, grow, and be inspired."
-    }
-  ],
+<body>
 
-  gallery: [
-    "images/IMG-20260504-WA0022.jpg",
-    "images/event1.jpg",
-    "images/team1.jpg",
-    "images/gallery1.jpg"
-  ],
+<header>
+  <div class="logo">
+    <img src="images/IMG-20260504-WA0022.jpg" alt="Vision Craft Logo">
+    <h1>VISION CRAFT</h1>
+  </div>
 
-  futureFeatures: [
-    "Event Tickets",
-    "Donations",
-    "Merchandise",
-    "Artist Booking",
-    "Volunteer Signup",
-    "Event Gallery",
-    "Newsletter"
-  ],
+  <nav>
+    <a href="#about">About</a>
+    <a href="#mission">Mission</a>
+    <a href="#team">Team</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  contact: {
-    title: "Connect With Vision Craft",
-    message:
-      "Have questions, want to support, or want to collaborate with Vision Craft? Contact us today.",
-    email: "visioncraftllp10@gmail.com",
-    phone: "317 827 3128",
-    location: "Indiana, USA"
-  }
-};
+<section class="hero">
+  <div>
+    <h2>See It. Believe It. Create It.</h2>
+    <p>
+      Vision Craft is a creative, faith-centered, and community-focused movement
+      built to inspire, connect, and impact the next generation through meaningful
+      events, media, leadership, and powerful experiences.
+    </p>
+    <a href="#about" class="btn">Discover Vision Craft</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h3>About Vision Craft</h3>
+    <p class="center">
+      Vision Craft is more than an organization. It is a movement focused on youth,
+      faith, creativity, media, leadership, and community impact. We believe that
+      every vision starts with faith, grows with action, and becomes real through
+      discipline, teamwork, and purpose.
+    </p>
+  </div>
+</section>
+
+<section class="dark" id="mission">
+  <div class="container">
+    <h3>Our Mission & Vision</h3>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Our Mission</h4>
+        <p>
+          To inspire young people and communities through creative events,
+          faith-based experiences, leadership, media, and moments of connection.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Our Vision</h4>
+        <p>
+          To become a platform where young people can discover their gifts,
+          grow their confidence, and create positive impact in their community.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Our Purpose</h4>
+        <p>
+          To bring people together, build meaningful experiences, and help the
+          next generation see what is possible.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="orange">
+  <div class="container">
+    <h3>What We Stand For</h3>
+
+    <div class="grid">
+      <div class="card"><h4>Faith</h4><p>We believe purpose starts with God.</p></div>
+      <div class="card"><h4>Creativity</h4><p>We use ideas, media, and events to inspire people.</p></div>
+      <div class="card"><h4>Leadership</h4><p>We encourage responsibility, discipline, and growth.</p></div>
+      <div class="card"><h4>Unity</h4><p>We bring people together through meaningful experiences.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <h3>Our Team</h3>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Leadership Team</h4>
+        <p>Guiding the vision, planning, and direction of Vision Craft.</p>
+      </div>
+
+      <div class="card">
+        <h4>Media Team</h4>
+        <p>Creating photos, videos, graphics, and digital content.</p>
+      </div>
+
+      <div class="card">
+        <h4>Promotion Team</h4>
+        <p>Spreading the vision and connecting with the community.</p>
+      </div>
+
+      <div class="card">
+        <h4>Event Team</h4>
+        <p>Organizing concerts, worship nights, youth gatherings, and special events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="services">
+  <div class="container">
+    <h3>What We Do</h3>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Events</h4>
+        <p>Concerts, worship experiences, youth gatherings, and community programs.</p>
+      </div>
+
+      <div class="card">
+        <h4>Media</h4>
+        <p>Photography, video, graphics, promotional content, and storytelling.</p>
+      </div>
+
+      <div class="card">
+        <h4>Youth Connection</h4>
+        <p>Creating spaces where young people can connect, grow, and be inspired.</p>
+      </div>
+
+      <div class="card">
+        <h4>Community Impact</h4>
+        <p>Building opportunities for people to come together and support one another.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h3>Gallery</h3>
+    <p class="center">
+      A space for Vision Craft photos, events, worship moments, behind-the-scenes,
+      team memories, and community highlights.
+    </p>
+
+    <div class="gallery">
+      <img src="images/IMG-20260504-WA0022.jpg" alt="Vision Craft Logo">
+      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Event">
+      <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1200&auto=format&fit=crop" alt="Community">
+      <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1200&auto=format&fit=crop" alt="Stage">
+    </div>
+  </div>
+</section>
+
+<section class="orange">
+  <div class="container">
+    <h3>Coming Soon</h3>
+
+    <div class="grid">
+      <div class="card"><h4>Event Tickets</h4><p>Future ticket links for Vision Craft events.</p></div>
+      <div class="card"><h4>Donations</h4><p>A way for supporters to help the mission grow.</p></div>
+      <div class="card"><h4>Merchandise</h4><p>Vision Craft shirts, wristbands, and future products.</p></div>
+      <div class="card"><h4>Volunteer Signup</h4><p>A place for people to join and support the team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h3>Connect With Vision Craft</h3>
+  <p>Have questions, want to support, or want to collaborate with Vision Craft?</p>
+  <p>Email: visioncraftllp10@gmail.com</p>
+  <p>Tel: 317 827 3128</p>
+  <p>Indiana, USA</p>
+
+  <a class="btn" href="mailto:visioncraftllp10@gmail.com">Contact Us</a>
+</section>
+
+<footer>
+  © 2026 Vision Craft. All rights reserved.
+</footer>
+
+</body>
+</html> 
